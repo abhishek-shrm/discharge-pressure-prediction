@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Discharge Pressure Predictor</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <h3 style="margin-left: 3em;margin-top: 1em; color:darkmagenta;">Discharge Pressure Predictor</h3>
+    <p style="margin-left: 3em;margin-top: 1em;"><strong><span style="color: green;">{{prediction_text}}</span></strong></p>
+  <form class="form-horizontal" style="margin-left: 3em;" method="POST" action="/predict">
+    <fieldset>
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="suction_pressure">Suction Pressure (psig)</label>  
+      <div class="col-md-4">
+      <input id="suction_pressure" name="suction_pressure" type="text" placeholder="Suction Pressure (psig)" class="form-control input-md" required="">
+        
+      </div>
+    </div>
+    
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="suction_temperature">Suction Temperature (F)</label>  
+      <div class="col-md-4">
+      <input id="suction_temperature" name="suction_temperature" type="text" placeholder="Suction Temperature (F)" class="form-control input-md" required="">
+        
+      </div>
+    </div>
+    
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="total_flow">Total Flow (gpm)</label>  
+      <div class="col-md-4">
+      <input id="total_flow" name="total_flow" type="text" placeholder="Total Flow (gpm)" class="form-control input-md" required="">
+        
+      </div>
+    </div>
+    
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="speed">Speed (rpm)</label>  
+      <div class="col-md-4">
+      <input id="speed" name="speed" type="text" placeholder="Speed (rpm)" class="form-control input-md" required="">
+        
+      </div>
+    </div>
+    
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="valve_position">By-pass Valve Position (%)</label>  
+      <div class="col-md-4">
+      <input id="valve_position" name="valve_position" type="text" placeholder="By-pass Valve Position (%)" class="form-control input-md" required="">
+        
+      </div>
+    </div>
+    
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="discharge_temp">Discharge Temperature (F)</label>  
+      <div class="col-md-4">
+      <input id="discharge_temp" name="discharge_temp" type="text" placeholder="Discharge Temperature (F)" class="form-control input-md" required="">
+      <span class="help-block">All fields are mandatory</span>  
+      </div>
+    </div>
+    
+    <!-- Button -->
+    <div class="form-group">
+      <div class="col-md-4">
+        <input class='btn btn-info' type='submit' value='Submit'>
+      </div>
+    </div>
+    
+    </fieldset>
+    </form>
+    
+</body>
+</html>
